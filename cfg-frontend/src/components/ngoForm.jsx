@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Document = () => {
+const NGOForm = () => {
     const [formData, setFormData] = useState({
         essay: { verified: '', remarks: '' },
         panCard: { verified: '', remarks: '' },
@@ -125,4 +125,4 @@ const Document = () => {
     );
 };
 
-export default Document;
+export default NGOForm;

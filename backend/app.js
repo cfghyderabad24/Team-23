@@ -10,31 +10,29 @@ const NgoVerification = require('./models/ngoVerification');
 const app = express();
 const port = 3000;
 
-// Middleware
+
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB connection
 connectDb().catch(err => console.error(err));
 
-// Handle form submission and save student details
+
 app.post('/api/student/register', async (req, res) => {
     try {
         const formData = req.body;
         console.log(formData)
-        // Generate a unique studentId (you can use any unique identifier logic here)
+
         const studentId = generateStudentId();
 
-        // Create a new student instance
+
         const ngoVerificaion = new NgoVerification({
             ...formData,
             studentId
         });
 
-        // Save student to MongoDB
+
         const savedStudent = await ngoVerificaion.save();
 
-        // Optional: You can perform additional actions here, such as sending a confirmation email
 
         res.status(201).json(savedStudent);
     } catch (error) {
