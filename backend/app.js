@@ -69,6 +69,11 @@ function generateStudentId() {
     return 'STU' + Math.random().toString(36).substr(2, 9); // Example: STUabc123456
 }
 
+
+app.use('/api', ngoRoutes);
+app.use('/api/auth', authRoutes);
+
+
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
