@@ -278,7 +278,7 @@ function FormA() {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded mt-4 w-full"
+          className="bg-blue-500 text-black p-2 pt-6 rounded mt-4 w-full"
         >
           Submit
         </button>

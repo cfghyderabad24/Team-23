@@ -64,16 +64,23 @@ import Signup from "./components/main/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import VolDisplay from "./components/VolHome";
 import NGOForm from "./components/ngoForm";
+import Student from "./components/main/Student";
 // import NGOSubmission from "./pages/NGOsubmission";
+import Document from "./components/volform";
+import FormA from "./components/FormA";
 
 export default function App() {
   return <BrowserRouter>
-    <Header path="/home" />
+    <Header path="/" />
     <Routes>
+      <Route path="/student/:studentid" element={<Document />}></Route>
       <Route path="/sign-up" element={<Signup />}></Route>
       <Route path="/sign-in" element={<Signin />}></Route>
       <Route path="/volunteer" element={<VolDisplay />}></Route>
       <Route path="/ngo" element={< NGOForm />}></Route>
+      <Route path="/forma" element={< FormA />}></Route>
+
+      {/* <Route path="/student" element={<Student />}></Route > */}
 
       {/* <Route path="/form1" element={<NGOSubmission />}></Route>  */}
     </Routes>

@@ -103,7 +103,9 @@ const VolForm = () => {
                         </tbody>
                     </table>
                 </div>
-                <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-4 w-full">Submit</button>
+                <Button gradientDuoTone="purpleToBlue" outline>
+                    Login
+                </Button>
             </form>
         </div>
     );
