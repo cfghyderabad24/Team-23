@@ -1,29 +1,45 @@
 import React, { useState } from "react";
 import { Button, Label, TextInput, Select } from "flowbite-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NGO from "./NGO";
 import Student from "./Student";
 import Volunteer from "./Volunteer";
 import Admin from "./Admin";
 
 const Signin = () => {
-    const [role, setRole] = useState("student");
+    const [role, setRole] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [authorized, setAuthorized] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
+        e.preventDefault();
+        setAuthorized(true);
+        renderRoleComponent();
+    }
 
-
-
-        if (role == 'ngos') {
-            return <NGO email={email} />;
-        } else if (role == 'Studemt') {
-            return <Student />
-        } else if (role == 'Volunteer') {
-            return <Volunteer />
-        } else if (role == 'Admin') {
-            return <Admin />
+    const renderRoleComponent = () => {
+        switch (role) {
+            case 'ngos':
+                console.log(role);
+                navigate('/ngo');
+                break;
+            case 'student':
+                console.log(role);
+                navigate('/student');
+                break;
+            case 'volunteer':
+                console.log(role);
+                navigate('/volunteer');
+                break;
+            case 'admin':
+                console.log(role);
+                navigate('/admin');
+                break;
+            default:
+                console.log('Invalid role');
+                break;
         }
     }
 

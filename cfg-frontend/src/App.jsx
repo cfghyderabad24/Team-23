@@ -62,6 +62,8 @@ import Signin from "./components/main/Signin";
 import Signup from "./components/main/Signup";
 // import Signin from "./components/main/Signin";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import VolDisplay from "./components/VolHome";
+import NGOForm from "./components/ngoForm";
 // import NGOSubmission from "./pages/NGOsubmission";
 
 export default function App() {
@@ -70,6 +72,9 @@ export default function App() {
     <Routes>
       <Route path="/sign-up" element={<Signup />}></Route>
       <Route path="/sign-in" element={<Signin />}></Route>
+      <Route path="/volunteer" element={<VolDisplay />}></Route>
+      <Route path="/ngo" element={< NGOForm />}></Route>
+
       {/* <Route path="/form1" element={<NGOSubmission />}></Route>  */}
     </Routes>
   </BrowserRouter>
